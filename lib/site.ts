@@ -9,7 +9,15 @@ export const site = {
   address: "12 Example Street, Your City",
   hours: "Tuesday to Sunday, 7am until sold out",
   email: "hello@example.com",
+  phone: "+1 555 010 0123",
+  /* WhatsApp number in international format, digits only (no +, spaces or dashes).
+     PLACEHOLDER: replace with your real WhatsApp number. */
+  whatsapp: "15550100123",
 };
+
+/** WhatsApp chat link, optionally with a ready-written message. */
+export const whatsappUrl = (text = `Hi ${site.name}! I'd like to ask about a preorder box.`) =>
+  `https://wa.me/${site.whatsapp}?text=${encodeURIComponent(text)}`;
 
 /* ---------- Images ----------
  * Every image on the site is listed here. When you upload your own photos,
@@ -63,8 +71,38 @@ export const money = (n: number) => `$${n.toFixed(2)}`;
 
 export const navLinks = [
   { href: "/menu", label: "Menu" },
-  { href: "/#night-shift", label: "The night shift" },
   { href: "/about", label: "About" },
+  { href: "/blog", label: "Journal" },
+  { href: "/branches", label: "Branches" },
   { href: "/faq", label: "FAQ" },
   { href: "/contact", label: "Contact" },
 ];
+
+/* ---------- Branches ----------
+ * SAMPLE DATA: replace names, addresses, hours, phone numbers and coordinates
+ * with your real shops. lat/lng place each pin on the map and power
+ * "Use my location"; get them by right-clicking a spot in Google Maps.
+ */
+export type Branch = {
+  id: string;
+  name: string;
+  area: string;
+  address: string;
+  hours: string;
+  phone: string;
+  lat: number;
+  lng: number;
+  img: string;
+  note: string;
+};
+
+export const branches: Branch[] = [
+  { id: "example-street", name: "The Bakehouse",  area: "Old Town",     address: "12 Example Street, Your City",   hours: "Tue–Sun, 7am until sold out", phone: "+1 555 010 0123", lat: 40.7128, lng: -74.006,  img: images.visitShopfront, note: "Where the ovens are. Watch the night shift through the window." },
+  { id: "market-square",  name: "Market Square",  area: "City Centre",  address: "3 Market Square, Your City",     hours: "Tue–Sat, 7:30am until sold out", phone: "+1 555 010 0124", lat: 40.7191, lng: -73.9973, img: images.shiftDoors,     note: "Our busiest counter. Preorder boxes are collected here." },
+  { id: "riverside",      name: "Riverside",      area: "Riverside",    address: "48 River Walk, Your City",       hours: "Wed–Sun, 8am until sold out",  phone: "+1 555 010 0125", lat: 40.7069, lng: -74.0154, img: images.shiftLastLoaf,  note: "A small kiosk by the water, with coffee and pastry." },
+  { id: "north-station",  name: "North Station",  area: "Northside",    address: "Platform Arcade, North Station", hours: "Mon–Fri, 6:30am until sold out", phone: "+1 555 010 0126", lat: 40.7306, lng: -73.9952, img: images.aboutBakery,    note: "For the early commute: baguettes, crescents and cardamom swirls." },
+];
+
+/** Google Maps directions to a branch, from the visitor's location if known. */
+export const directionsUrl = (b: Branch, from?: { lat: number; lng: number }) =>
+  `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(b.address)}${from ? `&origin=${from.lat},${from.lng}` : ""}`;

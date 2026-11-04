@@ -6,6 +6,7 @@ import Effects from "@/components/Effects";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import Drawer from "@/components/Drawer";
+import WhatsAppButton from "@/components/WhatsAppButton";
 import { site } from "@/lib/site";
 import "./globals.css";
 
@@ -35,6 +36,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <main id="main">{children}</main>
           <Footer />
           <Drawer />
+          <WhatsAppButton />
         </CartProvider>
       </body>
     </html>

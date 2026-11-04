@@ -9,6 +9,9 @@ export default function Footer() {
           <Link href="/">Home</Link>
           <Link href="/menu">Menu</Link>
           <Link href="/about">About</Link>
+          <Link href="/#night-shift">The night shift</Link>
+          <Link href="/blog">Journal</Link>
+          <Link href="/branches">Branches</Link>
           <Link href="/faq">FAQ</Link>
           <Link href="/contact">Contact</Link>
         </nav>
@@ -20,6 +23,11 @@ export default function Footer() {
       </div>
       <div className="footer__row">
         <span>© {new Date().getFullYear()} {site.name}</span>
+        <nav className="footer__legal" aria-label="Policies">
+          <Link href="/policies/shipping">Pickup &amp; Delivery</Link>
+          <Link href="/policies/privacy">Privacy</Link>
+          <Link href="/policies/terms">Terms</Link>
+        </nav>
         <a href="#main">Back to the top ↑</a>
       </div>
       <div className="footer__mark" aria-hidden="true">

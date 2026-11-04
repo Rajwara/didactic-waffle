@@ -29,7 +29,7 @@ export const images = {
   productBaguette: "/images/product-baguette.webp",
   productSeededRye: "/images/product-seeded-rye.webp",
   productButterCrescent: "/images/product-butter-crescent.webp",
-  productCardamomSwirl: "/images/product-cardamom-swirl.svg",
+  productCardamomSwirl: "/images/product-cardamom-swirl.webp",
   productLemonTart: "/images/product-lemon-tart.webp",
   productCookie: "/images/product-cookie.webp",
   productMorningCake: "/images/product-morning-cake.webp",

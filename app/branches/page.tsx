@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Display from "@/components/Display";
 import ImageSlot from "@/components/ImageSlot";
-import BranchStory from "@/components/branches/BranchStory";
+import BranchGlobe from "@/components/branches/BranchGlobe";
 import BranchLocator from "@/components/branches/BranchLocator";
 import Cta from "@/components/Cta";
 import { branches, images, site } from "@/lib/site";
@@ -26,7 +26,7 @@ export default function BranchesPage() {
           </p>
         </div>
       </section>
-      <BranchStory />
+      <BranchGlobe />
       <BranchLocator />
       <Cta />
     </>

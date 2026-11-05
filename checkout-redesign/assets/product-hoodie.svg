@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="800" viewBox="0 0 600 800">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#eef1f4"/>
+      <stop offset="1" stop-color="#dde3e9"/>
+    </linearGradient>
+    <linearGradient id="fab" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#9aa3ad"/>
+      <stop offset="1" stop-color="#7c8691"/>
+    </linearGradient>
+    <linearGradient id="sleeve" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#8d969f"/>
+      <stop offset="1" stop-color="#737d88"/>
+    </linearGradient>
+  </defs>
+  <rect width="600" height="800" fill="url(#bg)"/>
+  <!-- floor shadow -->
+  <ellipse cx="300" cy="700" rx="190" ry="18" fill="#003862" opacity=".08"/>
+
+  <!-- sleeves -->
+  <path d="M175 240 C 130 260, 105 330, 92 420 L 78 600 C 76 620, 92 632, 112 630 L 140 628 C 156 626, 162 614, 162 600 L 175 430 Z" fill="url(#sleeve)"/>
+  <path d="M425 240 C 470 260, 495 330, 508 420 L 522 600 C 524 620, 508 632, 488 630 L 460 628 C 444 626, 438 614, 438 600 L 425 430 Z" fill="url(#sleeve)"/>
+  <!-- cuffs -->
+  <rect x="80" y="596" width="82" height="34" rx="10" fill="#6c7681"/>
+  <rect x="438" y="596" width="82" height="34" rx="10" fill="#6c7681"/>
+  <g stroke="#5d6772" stroke-width="2" opacity=".6">
+    <path d="M92 600v28M104 600v28M116 600v28M128 600v28M140 600v28M152 600v28"/>
+    <path d="M448 600v28M460 600v28M472 600v28M484 600v28M496 600v28M508 600v28"/>
+  </g>
+
+  <!-- body -->
+  <path d="M175 230 C 210 205, 250 196, 300 196 C 350 196, 390 205, 425 230 L 440 640 C 440 655, 428 666, 412 666 L 188 666 C 172 666, 160 655, 160 640 Z" fill="url(#fab)"/>
+  <!-- waistband -->
+  <path d="M162 622 L 438 622 L 440 650 C 440 660, 430 668, 418 668 L 182 668 C 170 668, 160 660, 160 650 Z" fill="#6c7681"/>
+  <g stroke="#5d6772" stroke-width="2" opacity=".55">
+    <path d="M180 626v38M200 626v38M220 626v38M240 626v38M260 626v38M280 626v38M300 626v38M320 626v38M340 626v38M360 626v38M380 626v38M400 626v38M420 626v38"/>
+  </g>
+
+  <!-- kangaroo pocket -->
+  <path d="M215 470 L 385 470 L 410 590 L 190 590 Z" fill="#8a939d"/>
+  <path d="M215 470 L 190 590 M385 470 L 410 590" stroke="#6c7681" stroke-width="4" fill="none"/>
+  <path d="M220 474 L 380 474" stroke="#a7afb8" stroke-width="2"/>
+
+  <!-- hood -->
+  <path d="M215 230 C 205 150, 245 105, 300 105 C 355 105, 395 150, 385 230 C 360 262, 330 272, 300 272 C 270 272, 240 262, 215 230 Z" fill="#8a939d"/>
+  <path d="M238 228 C 236 170, 262 140, 300 140 C 338 140, 364 170, 362 228 C 345 250, 322 258, 300 258 C 278 258, 255 250, 238 228 Z" fill="#545e69"/>
+  <path d="M238 228 C 255 250, 278 258, 300 258 C 322 258, 345 250, 362 228" stroke="#a7afb8" stroke-width="5" fill="none"/>
+
+  <!-- drawstrings -->
+  <path d="M278 256 C 276 300, 272 340, 270 380" stroke="#f4f6f8" stroke-width="6" stroke-linecap="round" fill="none"/>
+  <path d="M322 256 C 324 300, 328 340, 330 380" stroke="#f4f6f8" stroke-width="6" stroke-linecap="round" fill="none"/>
+  <rect x="264" y="378" width="12" height="20" rx="4" fill="#d9dee3"/>
+  <rect x="324" y="378" width="12" height="20" rx="4" fill="#d9dee3"/>
+
+  <!-- small chest logo -->
+  <g transform="translate(345 300) scale(.42)" fill="#003862" opacity=".85">
+    <path d="M45.66 11.84C45.14 9.98 44.3 8.34 43.13 6.94 41.96 5.53 40.49 4.45 38.71 3.7 36.92 2.95 34.58 2.57 31.68 2.57H16.97V10.03C20.28 12.38 23.85 13.53 26.86 14.07V9.5H29.34C31.9 9.5 33.74 10.1 34.85 11.29 35.96 12.49 36.51 14.71 36.51 17.96 36.51 20.4 36.26 22.18 35.77 23.27 35.27 24.36 34.59 25.13 33.71 25.57 32.84 26 31.36 26.22 29.3 26.22H26.87V24.55C23.57 25.13 20.53 25.34 18.97 25.34 18.27 25.34 17.6 25.32 16.97 25.28V33.18H31.68C33.44 33.18 35.41 32.9 37.58 32.34 39.17 31.94 40.66 31.13 42.04 29.91 43.42 28.69 44.51 27.18 45.29 25.38 46.07 23.58 46.46 21.04 46.46 17.77 46.45 15.69 46.19 13.71 45.66 11.84Z"/>
+    <path d="M7.93 7.86V11.6C13.87 18.28 21.4 19.77 26.89 19.77 30.68 19.77 33.34 19.05 33.37 19.05L33.52 19.01C33.52 18.74 33.52 18.48 33.51 18.21 33.23 18.26 31.78 18.48 29.63 18.48 24.21 18.48 14.42 17.06 7.93 7.86Z"/>
+    <path d="M29.63 17.78C31.93 17.78 33.42 17.52 33.44 17.52L33.52 17.5C33.53 17.11 33.54 16.76 33.57 16.54 33.57 16.54 15.81 18.38 7.95 2.58L7.94 6.59C14.23 16.3 24.17 17.78 29.63 17.78Z"/>
+  </g>
+
+  <!-- seams / folds -->
+  <path d="M175 240 L 175 430 M425 240 L 425 430" stroke="#6f7984" stroke-width="3" opacity=".6"/>
+  <path d="M250 300 C 255 360, 248 420, 252 460" stroke="#ffffff" stroke-width="3" opacity=".12" fill="none"/>
+  <path d="M360 320 C 356 380, 362 420, 358 460" stroke="#000000" stroke-width="3" opacity=".06" fill="none"/>
+</svg>

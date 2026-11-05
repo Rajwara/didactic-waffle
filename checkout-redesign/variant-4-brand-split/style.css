@@ -44,7 +44,7 @@ svg { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-width:
 .product h3 { margin: 0; font-size: 16px; font-weight: 600; }
 .chips { display: flex; gap: 6px; }
 .chips span { display: inline-flex; align-items: center; gap: 6px; font-size: 12px; padding: 3px 10px; border-radius: 99px; background: rgba(255, 255, 255, .1); }
-.sw { width: 10px; height: 10px; border-radius: 50%; background: #111; border: 1px solid rgba(255, 255, 255, .4); }
+.sw { width: 10px; height: 10px; border-radius: 50%; background: #8f98a2; border: 1px solid rgba(255, 255, 255, .4); }
 .product__row { display: flex; align-items: center; justify-content: space-between; margin-top: auto; padding-top: 8px; }
 .product__row b { font-size: 17px; }
 .qty { display: inline-flex; align-items: center; background: rgba(255, 255, 255, .1); border-radius: 99px; padding: 3px; }

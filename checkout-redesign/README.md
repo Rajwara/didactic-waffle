@@ -29,5 +29,5 @@ Each variant folder is self-contained: its own HTML, CSS and JavaScript (only th
 - Place a test order to see the confirmation screen
 
 ## Replace before showing real data
-- `assets/product-placeholder.svg` → real product photo (update the `<img src>` in each variant)
+- `assets/product-hoodie.svg` → real product photo (update the `<img src>` in each variant)
 - Saved addresses, card and names are sample data

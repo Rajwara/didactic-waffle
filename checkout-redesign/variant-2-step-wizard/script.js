@@ -246,7 +246,7 @@ document.addEventListener("click", (e) => {
       ["Ship to", addressText(), 0],
       ["Delivery", deliveryText(), 1],
       ["Payment", payText(), 2],
-      ["Items", `${t.qty} × Etam ELOA – SC Classique${Cart.state.gift ? " · gift wrapped" : ""}`, null],
+      ["Items", `${t.qty} × DRESSUP Basics Oversized Fleece Hoodie${Cart.state.gift ? " · gift wrapped" : ""}`, null],
     ];
     $("#review").innerHTML =
       rows.map(([k, v, g]) => `<div><dt>${k}</dt><dd>${v}</dd>${g === null ? "<span></span>" : `<button type="button" data-goto="${g}">Edit</button>`}</div>`).join("") +

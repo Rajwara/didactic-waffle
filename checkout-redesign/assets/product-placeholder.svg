@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="800" viewBox="0 0 600 800">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#e9d9cb"/>
+      <stop offset="1" stop-color="#c9a993"/>
+    </linearGradient>
+  </defs>
+  <rect width="600" height="800" fill="url(#g)"/>
+  <g fill="none" stroke="#2a2420" stroke-width="10" stroke-linecap="round" stroke-linejoin="round" opacity=".85">
+    <!-- simple bra outline -->
+    <path d="M150 330 C 170 300, 205 285, 235 300"/>
+    <path d="M450 330 C 430 300, 395 285, 365 300"/>
+    <path d="M120 420 C 140 360, 200 330, 300 400 C 400 330, 460 360, 480 420"/>
+    <path d="M120 420 C 160 470, 250 470, 300 420 C 350 470, 440 470, 480 420"/>
+    <path d="M235 300 L 210 175"/>
+    <path d="M365 300 L 390 175"/>
+  </g>
+  <g fill="#2a2420" opacity=".35">
+    <circle cx="200" cy="400" r="5"/><circle cx="230" cy="420" r="5"/><circle cx="185" cy="430" r="5"/>
+    <circle cx="400" cy="400" r="5"/><circle cx="370" cy="420" r="5"/><circle cx="415" cy="430" r="5"/>
+  </g>
+</svg>

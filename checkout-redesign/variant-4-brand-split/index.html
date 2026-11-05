@@ -1,0 +1,206 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Checkout · DRESSUP.GE — Variant 4 (Brand Split)</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="shell">
+    <!-- ============ LEFT: BRAND PANEL / ORDER ============ -->
+    <aside class="brand">
+      <div class="brand__inner">
+        <div class="brand__top">
+          <img src="../assets/dressup-logo-white.svg" alt="DRESSUP.GE" class="logo" />
+          <a href="#" class="backlink">← Continue shopping</a>
+        </div>
+
+        <p class="kicker">Your order</p>
+        <div class="bigtotal"><span data-out="total">149 ₾</span></div>
+
+        <article class="product">
+          <img src="../assets/product-placeholder.svg" alt="Etam ELOA bra in black" />
+          <div class="product__info">
+            <span class="tag">ETAM</span>
+            <h3>ELOA – SC Classique</h3>
+            <div class="chips"><span>95D</span><span><i class="sw"></i>Black</span></div>
+            <div class="product__row">
+              <div class="qty"><button type="button" data-qty-dec aria-label="Decrease">−</button><span data-qty>1</span><button type="button" data-qty-inc aria-label="Increase">+</button></div>
+              <b>149 ₾</b>
+            </div>
+          </div>
+        </article>
+
+        <label class="giftcard">
+          <input type="checkbox" data-gift />
+          <span class="giftcard__ico">🎁</span>
+          <span class="giftcard__t"><b>Add gift wrapping</b><small>Choose wrapping for this order · +5 ₾</small></span>
+          <span class="giftcard__plus" aria-hidden="true"></span>
+        </label>
+
+        <div class="promo" data-promo>
+          <button type="button" class="promo__head" id="promoToggle" aria-expanded="false">
+            <span class="promo__ico">🏷️</span> Promo code &amp; online voucher <span class="count">4</span> <i>▾</i>
+          </button>
+          <div class="promo__body" id="promoBody" hidden>
+            <div class="promo__row">
+              <input placeholder="Enter code" data-promo-input aria-label="Promo code" />
+              <button type="button" data-promo-apply>Apply</button>
+            </div>
+            <p class="promo-msg" data-promo-msg></p>
+          </div>
+        </div>
+
+        <div class="freeship">
+          <div class="freeship__t"><span>🚚 Free delivery unlocked</span><span>100 ₾+</span></div>
+          <div class="bar"><i style="width:100%"></i></div>
+        </div>
+
+        <dl class="totals">
+          <div><dt>Products (<span data-out="count">1</span>)</dt><dd data-out="subtotal">149 ₾</dd></div>
+          <div><dt>Delivery fee</dt><dd data-out="delivery">Free</dd></div>
+          <div data-row="gift" hidden><dt>Gift wrapping</dt><dd data-out="gift"></dd></div>
+          <div data-row="discount" hidden><dt>Discount</dt><dd data-out="discount" class="green"></dd></div>
+        </dl>
+
+        <ul class="badges">
+          <li>🔒 Secure payment</li><li>↩︎ 14-day returns</li><li>⭐ 4.8 / 5 rating</li>
+        </ul>
+      </div>
+    </aside>
+
+    <!-- ============ RIGHT: STEPS ============ -->
+    <main class="steps">
+      <header class="steps__top">
+        <h1>Checkout</h1>
+        <div class="user"><span>Sohaib Safdar</span><span class="avatar">SS</span></div>
+      </header>
+
+      <div class="progress" aria-hidden="true"><i id="progressBar"></i></div>
+
+      <ol class="timeline">
+        <!-- STEP 1 -->
+        <li class="step open" data-step="address">
+          <button type="button" class="step__head" aria-expanded="true">
+            <span class="step__ico">
+              <svg viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21Z" /><circle cx="12" cy="9.5" r="2.5" /></svg>
+            </span>
+            <span class="step__t"><b>Address</b><small class="step__sum">Where should we deliver?</small></span>
+            <span class="step__edit">Change</span>
+          </button>
+          <div class="step__body">
+            <div class="addr-list">
+              <label class="addr"><input type="radio" name="address" value="Home · 45 Vazha-Pshavela Ave, Tbilisi" checked />
+                <span><b>Home</b><small>45 Vazha-Pshavela Ave, apt 12 · Tbilisi</small><small>+995 555 12 34 56</small></span></label>
+              <label class="addr"><input type="radio" name="address" value="Work · 12 Rustaveli Ave, Tbilisi" />
+                <span><b>Work</b><small>12 Rustaveli Ave, floor 3 · Tbilisi</small><small>+995 555 12 34 56</small></span></label>
+              <label class="addr addr--add"><input type="radio" name="address" value="new" />
+                <span><b>+ New address</b><small>Deliver somewhere else</small></span></label>
+            </div>
+
+            <div class="form" id="newAddr" hidden>
+              <div class="field"><label for="t">Title <small>(Home, Work)</small></label><input id="t" placeholder="My address 1" /></div>
+              <div class="field"><label for="r">Region *</label>
+                <select id="r" data-req><option value="">Select region</option><option>Tbilisi</option><option>Adjara</option><option>Imereti</option><option>Kakheti</option><option>Kvemo Kartli</option><option>Shida Kartli</option><option>Mtskheta-Mtianeti</option><option>Samegrelo-Zemo Svaneti</option><option>Guria</option><option>Samtskhe-Javakheti</option><option>Racha-Lechkhumi</option></select></div>
+              <div class="field full"><label for="ad">Address *</label><input id="ad" placeholder="Street, building, apartment" data-req /></div>
+              <div class="field"><label for="fn">First name *</label><input id="fn" value="sohaib" data-req /></div>
+              <div class="field"><label for="ln">Last name *</label><input id="ln" value="safdar" data-req /></div>
+              <div class="field full"><label for="ph">Phone number *</label><div class="phone"><span>+995</span><input id="ph" placeholder="5XX XX XX XX" inputmode="numeric" data-phone data-req /></div></div>
+              <label class="check full"><input type="checkbox" /> <span>Set as default address</span></label>
+            </div>
+            <button type="button" class="next" data-next>Save &amp; continue</button>
+          </div>
+        </li>
+
+        <!-- STEP 2 -->
+        <li class="step" data-step="delivery">
+          <button type="button" class="step__head" aria-expanded="false">
+            <span class="step__ico">
+              <svg viewBox="0 0 24 24"><path d="M3 6h11v10H3zM14 9h4l3 3v4h-7" /><circle cx="7" cy="18" r="2" /><circle cx="17" cy="18" r="2" /></svg>
+            </span>
+            <span class="step__t"><b>Delivery information</b><small class="step__sum">Choose a delivery option</small></span>
+            <span class="step__edit">Change</span>
+          </button>
+          <div class="step__body">
+            <div class="deliv">
+              <label class="dopt"><input type="radio" name="delivery" data-fee="0" value="Standard · Free" checked />
+                <span class="dopt__when" data-date="3"></span><b>Standard</b><small>2–3 days</small><em class="free">Free</em></label>
+              <label class="dopt"><input type="radio" name="delivery" data-fee="9" value="Express · 9 ₾" />
+                <span class="dopt__when">Today</span><b>Express</b><small>Tbilisi only</small><em>9 ₾</em></label>
+              <label class="dopt"><input type="radio" name="delivery" data-fee="0" value="Store pickup · Free" />
+                <span class="dopt__when" data-date="1"></span><b>Pickup</b><small>East Point Mall</small><em class="free">Free</em></label>
+            </div>
+            <div class="field full comment">
+              <label for="cm">💬 Delivery comment <small>(optional)</small></label>
+              <textarea id="cm" rows="2" placeholder="Entrance, floor, apartment number, etc."></textarea>
+            </div>
+            <button type="button" class="next" data-next>Continue to payment</button>
+          </div>
+        </li>
+
+        <!-- STEP 3 -->
+        <li class="step" data-step="payment">
+          <button type="button" class="step__head" aria-expanded="false">
+            <span class="step__ico">
+              <svg viewBox="0 0 24 24"><rect x="2.5" y="5" width="19" height="14" rx="2" /><path d="M2.5 10h19M6 15h4" /></svg>
+            </span>
+            <span class="step__t"><b>Payment</b><small class="step__sum">Select a payment method</small></span>
+            <span class="step__edit">Change</span>
+          </button>
+          <div class="step__body">
+            <div class="paytabs" role="tablist">
+              <button type="button" class="on" data-ptab="cards">Cards</button>
+              <button type="button" data-ptab="bank">Internet bank</button>
+              <button type="button" data-ptab="later">Pay later</button>
+            </div>
+
+            <div class="ptiles" data-ppanel="cards">
+              <label class="pt"><input type="radio" name="pay" value="Visa •••• 4821" /><span class="pt__logo visa">VISA</span><b>•••• 4821</b><small>Saved card</small></label>
+              <label class="pt"><input type="radio" name="pay" value="New card" /><span class="pt__logo">＋</span><b>New card</b><small>Visa · Mastercard</small></label>
+              <label class="pt"><input type="radio" name="pay" value="Apple Pay" /><span class="pt__logo dark"><svg viewBox="0 0 384 512" style="width:14px;height:17px;fill:currentColor;stroke:none" aria-hidden="true"><path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/></svg></span><b>Apple Pay</b><small>Fast &amp; secure</small></label>
+            </div>
+            <div class="ptiles" data-ppanel="bank" hidden>
+              <label class="pt"><input type="radio" name="pay" value="TBC Internet Bank" /><span class="pt__logo" style="color:#00a3e0">TBC</span><b>TBC Bank</b><small>Internet bank</small></label>
+              <label class="pt"><input type="radio" name="pay" value="Bank of Georgia" /><span class="pt__logo" style="color:#f26522">BoG</span><b>Bank of Georgia</b><small>Internet bank</small></label>
+              <label class="pt"><input type="radio" name="pay" value="Liberty Bank" /><span class="pt__logo" style="color:#e4002b">LB</span><b>Liberty</b><small>Internet bank</small></label>
+            </div>
+            <div class="ptiles" data-ppanel="later" hidden>
+              <label class="pt"><input type="radio" name="pay" value="Buy Now, Pay Later" /><span class="pt__logo">🦁</span><b>Buy Now, Pay Later</b><small data-installment="4"></small></label>
+              <label class="pt"><input type="radio" name="pay" value="TBC - Pay Later" /><span class="pt__logo" style="color:#00a3e0">▲</span><b>TBC - Pay Later</b><small data-installment="6"></small></label>
+              <label class="pt"><input type="radio" name="pay" value="Da-Ka-Vi" /><span class="pt__logo">🌐</span><b>Da-Ka-Vi</b><small data-installment="3"></small></label>
+            </div>
+          </div>
+        </li>
+      </ol>
+
+      <div class="paybox">
+        <div class="paybox__total"><small>Total to pay</small><b data-out="total">149 ₾</b></div>
+        <button type="button" class="buy" data-buy disabled>
+          <span class="buy__label">Buy</span>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" /></svg>
+        </button>
+      </div>
+      <p class="paynote" id="payNote">Complete all 3 steps to place your order</p>
+    </main>
+  </div>
+
+  <button class="chat" aria-label="Chat with us"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v11H9l-5 4z" /></svg></button>
+
+  <dialog id="success" class="success">
+    <div class="success__top"><img src="../assets/dressup-logo-white.svg" alt="" /></div>
+    <div class="success__body">
+      <div class="tick">✓</div>
+      <h2>Order confirmed</h2>
+      <p>Order <b data-order-no></b> · <b data-success-total></b></p>
+      <p class="muted">We'll text you when the courier is on the way.</p>
+      <button type="button" class="buy" data-close-dialog><span class="buy__label">Back to shop</span></button>
+    </div>
+  </dialog>
+
+  <script src="script.js"></script>
+</body>
+</html>

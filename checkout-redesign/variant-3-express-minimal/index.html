@@ -1,0 +1,208 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Checkout · DRESSUP.GE — Variant 3 (Express Minimal)</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="split">
+    <!-- ============ LEFT: FORM ============ -->
+    <main class="main">
+      <header class="head">
+        <img src="../assets/dressup-logo.svg" alt="DRESSUP.GE" class="logo" />
+        <ol class="crumbs">
+          <li><a href="#">Bag</a></li>
+          <li aria-current="step">Information &amp; payment</li>
+          <li>Confirmation</li>
+        </ol>
+      </header>
+
+      <!-- Mobile order summary toggle -->
+      <button type="button" class="mtoggle" id="mtoggle" aria-expanded="false">
+        <span>🛍 Show order summary <i>▾</i></span><b data-out="total">149 ₾</b>
+      </button>
+
+      <!-- Express -->
+      <section class="express">
+        <p class="eyebrow">Express checkout</p>
+        <div class="express__btns">
+          <button type="button" class="xbtn apple" data-express aria-label="Apple Pay"><svg viewBox="0 0 384 512" width="15" height="18" fill="currentColor" aria-hidden="true"><path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/></svg> Pay</button>
+          <button type="button" class="xbtn gpay" data-express><b style="color:#4285f4">G</b>&nbsp;Pay</button>
+          <button type="button" class="xbtn tbc" data-express>TBC <small>Pay Later</small></button>
+        </div>
+        <div class="or"><span>or pay another way</span></div>
+      </section>
+
+      <form id="form" novalidate>
+        <!-- Contact -->
+        <section class="block">
+          <div class="block__title"><h2>Contact</h2><span class="signed">Signed in as <b>Sohaib S.</b></span></div>
+          <div class="fields">
+            <div class="f full"><input id="email" type="email" placeholder=" " value="sohaib.safdar@example.com" data-req /><label for="email">Email</label></div>
+            <label class="cb full"><input type="checkbox" checked /> <span>Email me about new arrivals and exclusive offers</span></label>
+          </div>
+        </section>
+
+        <!-- Shipping -->
+        <section class="block">
+          <div class="block__title"><h2>Delivery</h2></div>
+          <div class="fields">
+            <div class="f full">
+              <select id="saved">
+                <option value="home">Home — 45 Vazha-Pshavela Ave, Tbilisi</option>
+                <option value="work">Work — 12 Rustaveli Ave, Tbilisi</option>
+                <option value="new">+ Use a new address</option>
+              </select>
+              <label for="saved">Saved addresses</label>
+            </div>
+          </div>
+          <div class="fields" id="addrFields">
+            <div class="f">
+              <input id="first" placeholder=" " value="Sohaib" data-req /><label for="first">First name</label>
+            </div>
+            <div class="f">
+              <input id="last" placeholder=" " value="Safdar" data-req /><label for="last">Last name</label>
+            </div>
+            <div class="f full"><input id="street" placeholder=" " value="45 Vazha-Pshavela Ave" data-req /><label for="street">Address</label></div>
+            <div class="f full"><input id="apt" placeholder=" " value="Apt 12" /><label for="apt">Apartment, floor, entrance (optional)</label></div>
+            <div class="f">
+              <input id="city" placeholder=" " value="Tbilisi" data-req /><label for="city">City</label>
+            </div>
+            <div class="f">
+              <select id="region" data-req>
+                <option>Tbilisi</option><option>Adjara</option><option>Imereti</option><option>Kakheti</option>
+                <option>Kvemo Kartli</option><option>Shida Kartli</option><option>Mtskheta-Mtianeti</option>
+                <option>Samegrelo-Zemo Svaneti</option><option>Guria</option><option>Samtskhe-Javakheti</option><option>Racha-Lechkhumi</option>
+              </select>
+              <label for="region">Region</label>
+            </div>
+            <div class="f full phone"><input id="phone" placeholder=" " value="555 12 34 56" inputmode="numeric" data-phone data-req /><label for="phone">Phone (+995)</label></div>
+          </div>
+        </section>
+
+        <!-- Shipping method -->
+        <section class="block">
+          <div class="block__title"><h2>Shipping method</h2></div>
+          <div class="list">
+            <label class="row"><input type="radio" name="delivery" data-fee="0" checked /><span class="row__t">Standard<small>2–3 business days</small></span><b class="free">Free</b></label>
+            <label class="row"><input type="radio" name="delivery" data-fee="9" /><span class="row__t">Express Tbilisi<small>Same day, order before 14:00</small></span><b>9 ₾</b></label>
+            <label class="row"><input type="radio" name="delivery" data-fee="0" /><span class="row__t">Pick up — East Point Mall<small>Ready tomorrow from 12:00</small></span><b class="free">Free</b></label>
+          </div>
+          <details class="note">
+            <summary>+ Add delivery instructions</summary>
+            <textarea rows="2" placeholder="Intercom code, best time to call…"></textarea>
+          </details>
+        </section>
+
+        <!-- Payment -->
+        <section class="block">
+          <div class="block__title"><h2>Payment</h2><span class="signed">🔒 Encrypted &amp; secure</span></div>
+          <div class="list acc">
+            <label class="row"><input type="radio" name="pay" value="card" checked />
+              <span class="row__t">Credit / debit card</span>
+              <span class="brands"><i class="v">VISA</i><i class="m"><s></s><s></s></i><i class="a">AMEX</i></span>
+            </label>
+            <div class="sub" data-sub="card">
+              <div class="fields">
+                <div class="f full"><input id="cnum" placeholder=" " inputmode="numeric" data-cardnum /><label for="cnum">Card number</label></div>
+                <div class="f"><input id="cexp" placeholder=" " inputmode="numeric" data-expiry /><label for="cexp">Expiry (MM / YY)</label></div>
+                <div class="f"><input id="ccvc" placeholder=" " inputmode="numeric" data-cvc /><label for="ccvc">Security code</label></div>
+                <div class="f full"><input id="cname" placeholder=" " value="SOHAIB SAFDAR" /><label for="cname">Name on card</label></div>
+              </div>
+            </div>
+
+            <label class="row"><input type="radio" name="pay" value="bank" />
+              <span class="row__t">Internet banking</span>
+              <span class="brands"><i class="tbc">TBC</i><i class="bog">BoG</i></span>
+            </label>
+            <div class="sub" data-sub="bank" hidden>
+              <p>After clicking <b>Complete order</b> you'll be redirected to your bank to approve the payment securely.</p>
+            </div>
+
+            <label class="row"><input type="radio" name="pay" value="later" />
+              <span class="row__t">Pay in instalments<small>Buy Now Pay Later · TBC · Da-Ka-Vi</small></span>
+              <span class="from">from <b data-installment="6"></b>/mo</span>
+            </label>
+            <div class="sub" data-sub="later" hidden>
+              <div class="plans">
+                <label><input type="radio" name="plan" checked /><span><b>Buy Now, Pay Later</b><small data-plan="4"></small></span></label>
+                <label><input type="radio" name="plan" /><span><b>TBC Pay Later</b><small data-plan="6"></small></span></label>
+                <label><input type="radio" name="plan" /><span><b>Da-Ka-Vi</b><small data-plan="3"></small></span></label>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <button type="submit" class="submit" data-buy>Complete order · <span data-out="total">149 ₾</span></button>
+        <p class="fine">By completing your order you agree to our <a href="#">Terms</a>, <a href="#">Privacy</a> and <a href="#">Returns</a> policies.</p>
+      </form>
+
+      <footer class="foot">
+        <a href="#">Refund policy</a><a href="#">Shipping</a><a href="#">Privacy</a><a href="#">Terms of service</a><a href="#">Contact</a>
+      </footer>
+    </main>
+
+    <!-- ============ RIGHT: SUMMARY ============ -->
+    <aside class="side" id="side">
+      <div class="side__inner">
+        <article class="item">
+          <div class="thumb"><img src="../assets/product-placeholder.svg" alt="Etam ELOA bra in black" /><span class="badge" data-out="count">1</span></div>
+          <div class="item__t">
+            <b>ELOA – SC Classique</b>
+            <small>Etam · 95D · Black</small>
+            <div class="qty"><button type="button" data-qty-dec aria-label="Decrease">−</button><span data-qty>1</span><button type="button" data-qty-inc aria-label="Increase">+</button></div>
+          </div>
+          <span class="item__p">149 ₾</span>
+        </article>
+
+        <div class="promo" data-promo>
+          <div class="promo__row">
+            <div class="f"><input id="code" placeholder=" " data-promo-input /><label for="code">Gift card or discount code</label></div>
+            <button type="button" data-promo-apply>Apply</button>
+          </div>
+          <p class="promo-msg" data-promo-msg></p>
+          <button type="button" class="vouchers" id="vouchers">🎟 4 vouchers available — <u>view</u></button>
+          <div class="vlist" id="vlist" hidden>
+            <button type="button" data-code="DRESSUP10"><b>DRESSUP10</b><span>10% off your order</span></button>
+            <button type="button" data-code="WELCOME20"><b>WELCOME20</b><span>20 ₾ off, welcome gift</span></button>
+          </div>
+        </div>
+
+        <label class="gift">
+          <input type="checkbox" data-gift />
+          <span class="gift__art">🎁</span>
+          <span><b>Make it a gift</b><small>Signature DRESSUP box, ribbon &amp; card — 5 ₾</small></span>
+        </label>
+
+        <dl class="sum">
+          <div><dt>Subtotal</dt><dd data-out="subtotal">149 ₾</dd></div>
+          <div><dt>Shipping</dt><dd data-out="delivery">Free</dd></div>
+          <div data-row="gift" hidden><dt>Gift wrapping</dt><dd data-out="gift"></dd></div>
+          <div data-row="discount" hidden><dt>Discount</dt><dd data-out="discount" class="green"></dd></div>
+          <div class="total"><dt>Total</dt><dd><small>GEL</small> <span data-out="total">149 ₾</span></dd></div>
+        </dl>
+
+        <div class="perks">
+          <div><span>↩︎</span><p><b>Free returns</b> within 14 days</p></div>
+          <div><span>✓</span><p><b>100% authentic</b> official brand partner</p></div>
+          <div><span>💬</span><p><b>Need help?</b> Chat with our stylists</p></div>
+        </div>
+      </div>
+    </aside>
+  </div>
+
+  <dialog id="success" class="success">
+    <img src="../assets/dressup-logo.svg" alt="" />
+    <h2>Thank you</h2>
+    <p>Your order <b data-order-no></b> is confirmed.<br />A receipt for <b data-success-total></b> is on its way to your inbox.</p>
+    <button type="button" class="submit" data-close-dialog>Continue shopping</button>
+  </dialog>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,300 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Checkout · DRESSUP.GE — Variant 1 (Single Page)</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar__inner">
+      <a href="#" class="logo" aria-label="DRESSUP.GE home"><img src="../assets/dressup-logo.svg" alt="DRESSUP.GE" /></a>
+      <div class="secure">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10V7a5 5 0 0 1 10 0v3" /><rect x="4" y="10" width="16" height="11" rx="2.5" /></svg>
+        Secure checkout
+      </div>
+      <div class="avatar" title="Sohaib Safdar">SS</div>
+    </div>
+  </header>
+
+  <nav class="crumbs" aria-label="Checkout progress">
+    <span class="done">Bag</span><i></i><span class="current">Checkout</span><i></i><span>Confirmation</span>
+  </nav>
+
+  <main class="layout">
+    <!-- ========= LEFT: FORM ========= -->
+    <div class="flow">
+
+      <!-- 1. Address -->
+      <section class="card" id="step-address">
+        <header class="card__head">
+          <span class="num">1</span>
+          <div>
+            <h2>Delivery address</h2>
+            <p>Where should we send your order?</p>
+          </div>
+          <span class="check" aria-hidden="true"></span>
+        </header>
+
+        <div class="addr-grid" role="radiogroup" aria-label="Saved addresses">
+          <label class="addr">
+            <input type="radio" name="address" value="home" checked />
+            <span class="addr__body">
+              <span class="addr__title">Home <em>Default</em></span>
+              <span>Sohaib Safdar</span>
+              <span>45 Vazha-Pshavela Ave, apt 12</span>
+              <span>Tbilisi · +995 555 12 34 56</span>
+            </span>
+          </label>
+          <label class="addr">
+            <input type="radio" name="address" value="work" />
+            <span class="addr__body">
+              <span class="addr__title">Work</span>
+              <span>Sohaib Safdar</span>
+              <span>12 Rustaveli Ave, floor 3</span>
+              <span>Tbilisi · +995 555 12 34 56</span>
+            </span>
+          </label>
+          <label class="addr addr--new">
+            <input type="radio" name="address" value="new" />
+            <span class="addr__body">
+              <span class="plus">+</span>
+              <span class="addr__title">Add new address</span>
+            </span>
+          </label>
+        </div>
+
+        <div class="new-address" id="newAddress" hidden>
+          <div class="grid-2">
+            <div class="field span-2">
+              <label for="a-title">Address name <small>(e.g. Home, Work)</small></label>
+              <input id="a-title" placeholder="My address 1" />
+            </div>
+            <div class="field">
+              <label for="a-region">Region *</label>
+              <select id="a-region" data-req>
+                <option value="">Select region</option>
+                <option>Tbilisi</option><option>Adjara</option><option>Imereti</option><option>Kakheti</option>
+                <option>Kvemo Kartli</option><option>Shida Kartli</option><option>Mtskheta-Mtianeti</option>
+                <option>Samegrelo-Zemo Svaneti</option><option>Guria</option><option>Samtskhe-Javakheti</option>
+                <option>Racha-Lechkhumi</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="a-city">City *</label>
+              <input id="a-city" placeholder="Tbilisi" data-req />
+            </div>
+            <div class="field span-2">
+              <label for="a-street">Street address *</label>
+              <input id="a-street" placeholder="Street, building, apartment" data-req />
+            </div>
+            <div class="field">
+              <label for="a-first">First name *</label>
+              <input id="a-first" value="sohaib" data-req />
+            </div>
+            <div class="field">
+              <label for="a-last">Last name *</label>
+              <input id="a-last" value="safdar" data-req />
+            </div>
+            <div class="field span-2">
+              <label for="a-phone">Phone number *</label>
+              <div class="phone">
+                <span>🇬🇪 +995</span>
+                <input id="a-phone" inputmode="numeric" placeholder="5XX XX XX XX" data-phone data-req />
+              </div>
+            </div>
+            <label class="checkbox span-2"><input type="checkbox" /> Save as my default address</label>
+          </div>
+        </div>
+      </section>
+
+      <!-- 2. Delivery -->
+      <section class="card" id="step-delivery">
+        <header class="card__head">
+          <span class="num">2</span>
+          <div>
+            <h2>Delivery method</h2>
+            <p>All orders over 100 ₾ ship free.</p>
+          </div>
+          <span class="check" aria-hidden="true"></span>
+        </header>
+
+        <div class="options">
+          <label class="option">
+            <input type="radio" name="delivery" data-fee="0" checked />
+            <span class="option__icon">🚚</span>
+            <span class="option__text"><b>Standard delivery</b><small>2–3 business days</small></span>
+            <span class="option__price is-free">Free</span>
+          </label>
+          <label class="option">
+            <input type="radio" name="delivery" data-fee="9" />
+            <span class="option__icon">⚡</span>
+            <span class="option__text"><b>Express · Tbilisi</b><small>Today, order before 14:00</small></span>
+            <span class="option__price">9 ₾</span>
+          </label>
+          <label class="option">
+            <input type="radio" name="delivery" data-fee="0" />
+            <span class="option__icon">🏬</span>
+            <span class="option__text"><b>Pick up in store</b><small>East Point Mall · ready tomorrow</small></span>
+            <span class="option__price is-free">Free</span>
+          </label>
+        </div>
+
+        <details class="comment">
+          <summary>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12Z" /></svg>
+            Add a note for the courier
+            <span class="plus">+</span>
+          </summary>
+          <textarea rows="3" placeholder="Entrance, floor, intercom code…"></textarea>
+        </details>
+      </section>
+
+      <!-- 3. Payment -->
+      <section class="card" id="step-payment">
+        <header class="card__head">
+          <span class="num">3</span>
+          <div>
+            <h2>Payment</h2>
+            <p>Choose how you'd like to pay.</p>
+          </div>
+          <span class="check" aria-hidden="true"></span>
+        </header>
+
+        <div class="tabs" role="tablist">
+          <button type="button" role="tab" aria-selected="true" data-tab="cards">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="5" width="19" height="14" rx="2.5" /><path d="M2.5 10h19" /></svg>
+            Card
+          </button>
+          <button type="button" role="tab" aria-selected="false" data-tab="bank">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 10 12 4l9 6M5 10v8m4-8v8m6-8v8m4-8v8M3 20h18" /></svg>
+            Internet bank
+          </button>
+          <button type="button" role="tab" aria-selected="false" data-tab="later">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9" /><path d="M12 7v5l3 2" /></svg>
+            Pay later
+          </button>
+        </div>
+
+        <div class="tabpanel" data-panel="cards">
+          <label class="option">
+            <input type="radio" name="pay-cards" value="saved" checked />
+            <span class="cardlogo visa">VISA</span>
+            <span class="option__text"><b>Visa •••• 4821</b><small>Expires 08/28</small></span>
+          </label>
+          <label class="option">
+            <input type="radio" name="pay-cards" value="new" />
+            <span class="cardlogo plus-logo">+</span>
+            <span class="option__text"><b>Use a new card</b><small>Visa, Mastercard, Amex</small></span>
+          </label>
+          <div class="newcard" id="newCard" hidden>
+            <div class="grid-2">
+              <div class="field span-2"><label for="c-num">Card number</label><input id="c-num" inputmode="numeric" placeholder="1234 5678 9012 3456" data-cardnum /></div>
+              <div class="field"><label for="c-exp">Expiry</label><input id="c-exp" inputmode="numeric" placeholder="MM / YY" data-expiry /></div>
+              <div class="field"><label for="c-cvc">CVC</label><input id="c-cvc" inputmode="numeric" placeholder="123" data-cvc /></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="tabpanel" data-panel="bank" hidden>
+          <div class="tiles">
+            <label class="tile"><input type="radio" name="pay-bank" /><span class="bank" style="--c:#00a3e0">TBC</span><span>TBC Bank</span></label>
+            <label class="tile"><input type="radio" name="pay-bank" /><span class="bank" style="--c:#f26522">BoG</span><span>Bank of Georgia</span></label>
+            <label class="tile"><input type="radio" name="pay-bank" /><span class="bank" style="--c:#e4002b">L</span><span>Liberty Bank</span></label>
+          </div>
+          <p class="hint">You'll be redirected to your bank to approve the payment.</p>
+        </div>
+
+        <div class="tabpanel" data-panel="later" hidden>
+          <div class="tiles">
+            <label class="tile"><input type="radio" name="pay-later" /><span class="bank" style="--c:#f26522">🦁</span><span>Buy Now, Pay Later</span><small data-installment="4"></small></label>
+            <label class="tile"><input type="radio" name="pay-later" /><span class="bank" style="--c:#00a3e0">▲</span><span>TBC Pay Later</span><small data-installment="6"></small></label>
+            <label class="tile"><input type="radio" name="pay-later" /><span class="bank" style="--c:#2c6fb7">◎</span><span>Da-Ka-Vi</span><small data-installment="3"></small></label>
+          </div>
+          <p class="hint">0% interest. Approval takes about 2 minutes.</p>
+        </div>
+      </section>
+    </div>
+
+    <!-- ========= RIGHT: SUMMARY ========= -->
+    <aside class="summary" aria-label="Order summary">
+      <div class="summary__card">
+        <h2>Order summary <span class="pill"><span data-out="count">1</span> item</span></h2>
+
+        <article class="item">
+          <img src="../assets/product-placeholder.svg" alt="Etam – ELOA SC Classique bra in black" />
+          <div class="item__info">
+            <span class="brand">Etam</span>
+            <b>ELOA – SC Classique</b>
+            <span class="meta">Size 95D · Black</span>
+            <div class="item__row">
+              <div class="qty" aria-label="Quantity">
+                <button type="button" data-qty-dec aria-label="Decrease">−</button>
+                <span data-qty>1</span>
+                <button type="button" data-qty-inc aria-label="Increase">+</button>
+              </div>
+              <span class="price">149 ₾</span>
+            </div>
+          </div>
+        </article>
+
+        <label class="gift">
+          <span class="gift__icon">🎁</span>
+          <span><b>Add gift wrapping</b><small>Signature box &amp; handwritten card · 5 ₾</small></span>
+          <input type="checkbox" data-gift class="switch" />
+        </label>
+
+        <div class="promo" data-promo>
+          <div class="promo__row">
+            <input placeholder="Promo code or voucher" data-promo-input aria-label="Promo code" />
+            <button type="button" data-promo-apply>Apply</button>
+          </div>
+          <p class="promo-msg" data-promo-msg></p>
+          <p class="promo-avail">🏷️ You have <b>4</b> vouchers available</p>
+        </div>
+
+        <dl class="totals">
+          <div><dt>Subtotal</dt><dd data-out="subtotal">149 ₾</dd></div>
+          <div><dt>Delivery</dt><dd data-out="delivery" class="is-free">Free</dd></div>
+          <div data-row="gift" hidden><dt>Gift wrapping</dt><dd data-out="gift">5 ₾</dd></div>
+          <div data-row="discount" hidden class="discount"><dt>Discount</dt><dd data-out="discount">−0 ₾</dd></div>
+          <div class="grand"><dt>Total <small>incl. VAT</small></dt><dd data-out="total">149 ₾</dd></div>
+        </dl>
+
+        <button type="button" class="buy" data-buy disabled>Pay <span data-out="total">149 ₾</span></button>
+        <p class="buy-hint" id="buyHint">Complete the steps above to place your order</p>
+
+        <ul class="trust">
+          <li>🔒 SSL encrypted</li>
+          <li>↩︎ 14-day returns</li>
+          <li>✔︎ Authentic brands</li>
+        </ul>
+      </div>
+    </aside>
+  </main>
+
+  <!-- Mobile sticky pay bar -->
+  <div class="mobilebar">
+    <div><small>Total</small><b data-out="total">149 ₾</b></div>
+    <button type="button" class="buy" data-buy disabled>Pay now</button>
+  </div>
+
+  <button class="chat" aria-label="Chat with us">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v11H9l-5 4z" /></svg>
+  </button>
+
+  <dialog id="success" class="success">
+    <div class="success__tick">✓</div>
+    <h2>Thank you, Sohaib!</h2>
+    <p>Order <b data-order-no>#DU-000000</b> is confirmed. We've sent the details to your email.</p>
+    <p class="success__total">Paid <b data-success-total>149 ₾</b></p>
+    <button type="button" class="buy" data-close-dialog>Continue shopping</button>
+  </dialog>
+
+  <script src="script.js"></script>
+</body>
+</html>

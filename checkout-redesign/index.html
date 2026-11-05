@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>DRESSUP.GE · Checkout Redesign Concepts</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    :root { --navy: #003862; --muted: #64748b; --line: #e3e9ef; }
+    * { box-sizing: border-box; }
+    body { margin: 0; font-family: "Montserrat", system-ui, sans-serif; background: #f5f7fa; color: #0f1d2b; }
+    header { background: var(--navy); color: #fff; padding: 56px 24px 72px; text-align: center; }
+    header img { height: 32px; }
+    header h1 { font-size: clamp(26px, 4vw, 40px); margin: 28px 0 10px; font-weight: 800; letter-spacing: -.01em; }
+    header p { margin: 0 auto; max-width: 620px; opacity: .8; line-height: 1.6; }
+    main { max-width: 1100px; margin: -40px auto 60px; padding: 0 20px; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
+    a.card { display: flex; flex-direction: column; background: #fff; border-radius: 20px; padding: 28px; text-decoration: none; color: inherit; border: 1px solid var(--line); box-shadow: 0 10px 30px rgba(0, 56, 98, .06); transition: transform .2s, box-shadow .2s; }
+    a.card:hover { transform: translateY(-4px); box-shadow: 0 18px 40px rgba(0, 56, 98, .12); }
+    .num { width: 40px; height: 40px; border-radius: 12px; background: #edf3f8; color: var(--navy); display: grid; place-items: center; font-weight: 800; }
+    h2 { margin: 18px 0 6px; color: var(--navy); font-size: 20px; }
+    .tag { font-size: 12px; color: var(--muted); font-weight: 600; text-transform: uppercase; letter-spacing: .08em; }
+    ul { padding-left: 18px; margin: 14px 0 20px; color: #334155; font-size: 14px; line-height: 1.7; }
+    .open { margin-top: auto; font-weight: 600; color: var(--navy); }
+    footer { text-align: center; color: var(--muted); font-size: 13px; padding: 0 20px 40px; line-height: 1.7; }
+    code { background: #e8eef4; padding: 2px 6px; border-radius: 4px; }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="assets/dressup-logo-white.svg" alt="DRESSUP.GE" />
+    <h1>Checkout redesign: 4 concepts</h1>
+    <p>Four clickable directions for the new DRESSUP.GE checkout. Each one is fully interactive: change quantity, add gift wrapping, apply a promo code, switch delivery and payment, then place a test order.</p>
+  </header>
+
+  <main>
+    <a class="card" href="variant-1-single-page/index.html">
+      <span class="num">1</span>
+      <h2>Single Page</h2>
+      <span class="tag">Fastest · least clicks</span>
+      <ul>
+        <li>All 3 steps visible at once, each marked done as you finish it</li>
+        <li>Saved address cards with one-click selection</li>
+        <li>Delivery speed options with prices</li>
+        <li>Card / Internet bank / Pay later tabs</li>
+        <li>Sticky summary, pay bar fixed to the bottom on mobile</li>
+      </ul>
+      <span class="open">Open concept →</span>
+    </a>
+
+    <a class="card" href="variant-2-step-wizard/index.html">
+      <span class="num">2</span>
+      <h2>Step Wizard</h2>
+      <span class="tag">Guided · focused</span>
+      <ul>
+        <li>4-step progress bar: Address → Delivery → Payment → Review</li>
+        <li>One clear question per screen</li>
+        <li>Finished steps collapse into editable rows</li>
+        <li>Final review screen before paying</li>
+        <li>Floating-label inputs</li>
+      </ul>
+      <span class="open">Open concept →</span>
+    </a>
+
+    <a class="card" href="variant-3-express-minimal/index.html">
+      <span class="num">3</span>
+      <h2>Express Minimal</h2>
+      <span class="tag">Premium · editorial</span>
+      <ul>
+        <li>Apple Pay / Google Pay / TBC express buttons at the top</li>
+        <li>Fashion-style serif headings, calm white layout</li>
+        <li>Payment methods as an accordion list with brand logos</li>
+        <li>Full-height summary panel, voucher picker</li>
+        <li>Collapsible order summary on mobile</li>
+      </ul>
+      <span class="open">Open concept →</span>
+    </a>
+
+    <a class="card" href="variant-4-brand-split/index.html">
+      <span class="num">4</span>
+      <h2>Brand Split</h2>
+      <span class="tag">Bold · closest to today's flow</span>
+      <ul>
+        <li>Navy brand panel holds the order, gift wrap and promo code</li>
+        <li>Keeps today's Address → Delivery → Payment accordion</li>
+        <li>Connected timeline with progress and a summary on finished steps</li>
+        <li>Payment tiles for Cards, Internet bank and Pay later</li>
+        <li>Large total and Buy button always in view</li>
+      </ul>
+      <span class="open">Open concept →</span>
+    </a>
+  </main>
+
+  <footer>
+    Demo promo codes: <code>DRESSUP10</code> (−10%) and <code>WELCOME20</code> (−20 ₾).<br />
+    The product image is a placeholder. Replace <code>assets/product-placeholder.svg</code> with the real photo.
+  </footer>
+</body>
+</html>
